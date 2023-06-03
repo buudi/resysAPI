@@ -5,22 +5,25 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mountRoutes = require("./src/routes");
 
-const app = express();
+const makeApp = (modelMode) => {
+    const app = express();
 
-app.use(express.json());
-app.use(logger('dev'));
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+    app.use(express.json());
+    app.use(logger('dev'));
+    app.use(express.urlencoded({ extended: false }));
+    app.use(cookieParser());
 
 // serve static files from 'public' folder:
 // app.use(express.static(path.join(__dirname, 'public')));
 
-mountRoutes(app);
+    mountRoutes(app, modelMode);
 
 
-app.get("/", (req, res) => {
-    res.send(`apartments management system - server`);
-});
+    app.get("/", (req, res) => {
+        res.send(`apartments management system - server`);
+    });
 
+    return app;
+}
 
-module.exports = app;
+module.exports = {makeApp}

@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="basic TDD">
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/config/app.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/config/db.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/lib/Tenant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/models-mock/scratch.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/models/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/models/scratch.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/v2/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/controllers/scratch.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/v2/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/routes/scratch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/tests/scratch/scratch.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/routes/scratch.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/scratch.route.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -71,11 +76,17 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src" />
+      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\config" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI" />
     </key>
   </component>
@@ -92,7 +103,7 @@
       <workItem from="1685325333443" duration="1359000" />
       <workItem from="1685332484759" duration="132000" />
       <workItem from="1685761309535" duration="86000" />
-      <workItem from="1685761485382" duration="16584000" />
+      <workItem from="1685761485382" duration="32130000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -122,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685783680518</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="minor modifications">
+      <created>1685795054173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685795054173</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +165,8 @@
     <MESSAGE value="created v2" />
     <MESSAGE value="fixed git issue" />
     <MESSAGE value="basic TDD" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic TDD" />
+    <MESSAGE value="minor modifications" />
+    <MESSAGE value="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database" />
   </component>
 </project>
