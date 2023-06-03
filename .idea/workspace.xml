@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="fixed git issue">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/tests/scratch/scratch.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.test.js" afterDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="basic TDD">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/controllers/scratch.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/v2/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/controllers/scratch.controller.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/v2/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/routes/scratch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/tests/scratch/scratch.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/generateRandomNumber.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/utils/IDgenerator/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +75,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI" />
     </key>
   </component>
@@ -91,7 +92,7 @@
       <workItem from="1685325333443" duration="1359000" />
       <workItem from="1685332484759" duration="132000" />
       <workItem from="1685761309535" duration="86000" />
-      <workItem from="1685761485382" duration="13872000" />
+      <workItem from="1685761485382" duration="16584000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -114,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685767621172</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="basic TDD">
+      <created>1685783680518</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685783680518</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +146,7 @@
     <MESSAGE value="created ID generator" />
     <MESSAGE value="created v2" />
     <MESSAGE value="fixed git issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed git issue" />
+    <MESSAGE value="basic TDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic TDD" />
   </component>
 </project>

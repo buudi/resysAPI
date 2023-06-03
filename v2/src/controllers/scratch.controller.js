@@ -1,4 +1,4 @@
-const IDgenerator = require('../utils/idGenerator');
+const IDgenerator = require('../utils/IDgenerator');
 
 exports.printHello = (req, res) => {
     res.status(200).json({
