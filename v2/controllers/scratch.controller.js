@@ -1,7 +1,7 @@
 const IDgenerator = require('../utils/idGenerator');
 
 exports.printHello = (req, res) => {
-    res.json({
+    res.status(200).json({
         message: "Hello from the server"
     })
 }
