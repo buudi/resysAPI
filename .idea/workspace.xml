@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database">
-      <change afterPath="$PROJECT_DIR$/v2/middlewares/errorHandler.middleware.js" afterDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented error handling for database">
+      <change afterPath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP400.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP401.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP403.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP404.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/models/scratch.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/scratch.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/middlewares/errorHandler.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/middlewares/errorHandler.middleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +76,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src" />
+      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\config" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI" />
     </key>
@@ -95,7 +95,7 @@
       <workItem from="1685325333443" duration="1359000" />
       <workItem from="1685332484759" duration="132000" />
       <workItem from="1685761309535" duration="86000" />
-      <workItem from="1685761485382" duration="37440000" />
+      <workItem from="1685761485382" duration="38700000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -139,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685811336180</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="implemented error handling for database">
+      <created>1685849348728</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685849348728</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +173,7 @@
     <MESSAGE value="basic TDD" />
     <MESSAGE value="minor modifications" />
     <MESSAGE value="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database" />
+    <MESSAGE value="implemented error handling for database" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented error handling for database" />
   </component>
 </project>
