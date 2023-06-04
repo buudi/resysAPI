@@ -1,6 +1,7 @@
 const request = require('supertest');
 const { makeApp } = require("../../app");
 
+// with dependency injection, we can pass a mock app to the test
 const app = makeApp("mock");
 
 describe("GET /scratch", () => {
