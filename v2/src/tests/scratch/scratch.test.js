@@ -1,5 +1,7 @@
 const request = require('supertest');
-const app = require("../../app");
+const { makeApp } = require("../../app");
+
+const app = makeApp("mock");
 
 describe("GET /scratch", () => {
     it("should respond with 200 ok", async () => {
