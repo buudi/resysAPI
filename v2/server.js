@@ -1,7 +1,7 @@
-const {makeApp} = require("./app");
+const {makeApp} = require("./src/app");
 const config = require("./config/app.config");
 
-const app = makeApp("mock");
+const app = makeApp("default");
 
 const port = config.port;
 app.listen(port, () => {

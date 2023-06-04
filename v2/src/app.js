@@ -3,7 +3,9 @@ const express = require("express");
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const mountRoutes = require("./src/routes");
+const mountRoutes = require("./routes");
+const errorHandler = require("./middlewares/errorHandler.middleware");
+
 
 const makeApp = (modelMode) => {
     const app = express();
@@ -17,6 +19,7 @@ const makeApp = (modelMode) => {
 // app.use(express.static(path.join(__dirname, 'public')));
 
     mountRoutes(app, modelMode);
+    app.use(errorHandler);
 
 
     app.get("/", (req, res) => {

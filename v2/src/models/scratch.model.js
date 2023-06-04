@@ -1,13 +1,11 @@
 const db = require("../models/index");
 
-exports.selectApartments = async () => {
+exports.selectApartments = async (req, res) => {
     const query = "SELECT * FROM main_apartments";
-    const result = await db.query(query);
-    return result.rows;
+    return await db.query(query);
 }
 
 exports.selectTenants = async () => {
     const query = "SELECT * FROM tenants";
-    const response = await db.query(query);
-    return response.rows;
+    return await db.query(query);
 }
