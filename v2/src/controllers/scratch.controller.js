@@ -15,7 +15,7 @@ class ScratchController {
     getApartments = async (req, res, next) => {
         try {
             // 1. query the database
-            const apartments = await this.model.selectApartments(req, res);
+            const apartments = await this.model.selectApartments();
 
             // 2. if the database returned an error, throw an error
             if (apartments instanceof Error)

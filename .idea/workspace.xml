@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented custom errors">
-      <change beforePath="$PROJECT_DIR$/v2/src/tests/scratch/scratch.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/tests/scratch/scratch.test.js" afterDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="added mock db to tests">
+      <change afterPath="$PROJECT_DIR$/v2/src/models-mock/mock-db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/models-mock/scratch.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models-mock/scratch.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/models/scratch.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/scratch.model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +95,7 @@
       <workItem from="1685325333443" duration="1359000" />
       <workItem from="1685332484759" duration="132000" />
       <workItem from="1685761309535" duration="86000" />
-      <workItem from="1685761485382" duration="39298000" />
+      <workItem from="1685761485382" duration="42782000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -148,7 +153,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685850125665</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added mock db to tests">
+      <created>1685850723260</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685850723260</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added mock db to tests">
+      <created>1685850824054</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685850824054</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +196,7 @@
     <MESSAGE value="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database" />
     <MESSAGE value="implemented error handling for database" />
     <MESSAGE value="implemented custom errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented custom errors" />
+    <MESSAGE value="added mock db to tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mock db to tests" />
   </component>
 </project>
