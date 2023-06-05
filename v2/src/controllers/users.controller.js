@@ -1,6 +1,6 @@
 const IDgenerator = require('../utils/IDgenerator');
 
-class ScratchController {
+class UsersController {
     constructor(basePath) {
         this.basePath = basePath;
         this.model = require(`${this.basePath}/main/users.model`);
@@ -27,4 +27,4 @@ class ScratchController {
     }
 }
 
-module.exports = ScratchController;
+module.exports = UsersController;
