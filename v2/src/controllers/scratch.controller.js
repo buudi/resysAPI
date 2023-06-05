@@ -3,7 +3,7 @@ class ScratchController {
     constructor(pathPassed) {
         this.basePath = pathPassed;
         this.model = require(`${this.basePath}/scratch.model`);
-        console.log("ScratchController constructor called");
+        // console.log("ScratchController constructor called");
     }
 
     printHello = (req, res, next) => {
