@@ -43,5 +43,19 @@
       "email": "kaderAhmed@gmail.com",
       "date_settle_in": "2023-02-14T16:00:00.000Z",
       "apt_id": 1
-    }]
+    }],
+  "users": [
+    {
+      "user_id": "1",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "user_id": "2",
+      "username": "user",
+      "password": "user",
+      "role": "user"
+    }
+  ]
 }

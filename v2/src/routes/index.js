@@ -1,4 +1,5 @@
-const scratch = require('./scratch.route');
+const scratch = require('./scratch.routes');
+const users = require('./main/users.routes');
 
 module.exports = (app, modelMode) => {
     let modelPath;
@@ -9,4 +10,5 @@ module.exports = (app, modelMode) => {
     }
 
     app.use('/scratch', scratch(modelPath));
+    app.use('/users', users(modelPath));
 }

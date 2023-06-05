@@ -8,6 +8,6 @@ module.exports = (modelPath)  => {
     router.get('/generateId', controller.generateId);
     router.get('/apartments', controller.getApartments);
     router.get('/tenants', controller.getAllTenants);
-
+    router.post("/apartment", controller.createApartment)
     return router;
 }
