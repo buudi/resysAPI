@@ -5,38 +5,29 @@ const { makeApp } = require("../../app");
 const app = makeApp("mock");
 
 describe("GET /users", () => {
-
    it("should return a non empty array", async () => {
        // fetch the users from db
        const response = await request(app).get("/users");
-       const { users } = JSON.parse(response.text);
+       const users  = JSON.parse(response.text);
 
        expect(users.length).toBeGreaterThan(0);
-
        expect(response.statusCode).toBe(200);
-
-       // expect the response body to be in json
        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
    });
-
-
 });
 
 describe("POST /users", () => {
-
     it("should create a new user", async () => {
         // create a new user
         const newUser = {
+            username: "johndoe",
             name: "John Doe",
-            role: "member",
-            password: "123456"
+            password: "123456",
+            role: "member"
         }
-
+        // send the new user to the db
         const response = await request(app).post("/users").send(newUser);
         const { user } = JSON.parse(response.text);
-
-        // expect the db to contain newUser
-        // expect(user).toEqual(expect.arrayContaining([newUser]));
 
         expect(user).toMatchObject(newUser);
         expect(response.statusCode).toBe(201);
@@ -44,3 +35,26 @@ describe("POST /users", () => {
     });
 });
 
+
+describe("GET /users?username={{username}}", () => {
+    it('should find the user with username in the db and return the user object', async () => {
+        const response = await request(app).get("/users?username=admin");
+        const user = JSON.parse(response.text);
+
+        expect(response.statusCode).toBe(200);
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
+        expect(user.username).toEqual(expect.stringContaining("admin"));
+    });
+});
+
+
+describe("GET /users?role={{role}}", () => {
+    it('should find the users with role in the db and return the users array', async () => {
+        const response = await request(app).get("/users?role=admin");
+        const users = JSON.parse(response.text);
+
+        expect(response.statusCode).toBe(200);
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
+        expect(users.length).toBeGreaterThan(0);
+    });
+});

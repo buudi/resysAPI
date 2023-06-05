@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="small fix (class naming)">
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="post /users implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/models-mock/main/users.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models-mock/main/users.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/models-mock/mock-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models-mock/mock-db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/routes/main/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/main/users.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/tests/main/users.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/tests/main/users.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/utils/IDgenerator/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/utils/IDgenerator/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,26 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models-mock" />
@@ -84,6 +81,83 @@
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\config" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI" />
     </key>
+  </component>
+  <component name="RunManager" selected="Jest.GET /users?role={{role}}">
+    <configuration name="GET /users?role={{role}}" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/v2" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/v2/src/tests/main/users.test.js" />
+      <test-names>
+        <test-name value="GET /users?role={{role}}" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="GET /users?username={{username}}" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/v2" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/v2/src/tests/main/users.test.js" />
+      <test-names>
+        <test-name value="GET /users?username={{username}}" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="GET /users?username={username}" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/v2" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/v2/src/tests/main/users.test.js" />
+      <test-names>
+        <test-name value="GET /users?username={username}" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="GET /users?username={username}.should find the user with username in the db and return the user object" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/v2" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/v2/src/tests/main/users.test.js" />
+      <test-names>
+        <test-name value="GET /users?username={username}" />
+        <test-name value="should find the user with username in the db and return the user object" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="POST /users" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/v2" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/v2/src/tests/main/users.test.js" />
+      <test-names>
+        <test-name value="POST /users" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.GET /users?role={{role}}" />
+        <item itemvalue="Jest.GET /users?username={{username}}" />
+        <item itemvalue="Jest.GET /users?username={username}.should find the user with username in the db and return the user object" />
+        <item itemvalue="Jest.GET /users?username={username}" />
+        <item itemvalue="Jest.POST /users" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +174,7 @@
       <workItem from="1685761309535" duration="86000" />
       <workItem from="1685761485382" duration="42816000" />
       <workItem from="1685890559479" duration="1747000" />
-      <workItem from="1685921154171" duration="14270000" />
+      <workItem from="1685921154171" duration="20763000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -207,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685934291697</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="post /users implemented">
+      <created>1685937306989</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685937306989</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +323,7 @@
     <MESSAGE value="updated version in package.json" />
     <MESSAGE value="1st operational route yaay! GET /users" />
     <MESSAGE value="small fix (class naming)" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fix (class naming)" />
+    <MESSAGE value="post /users implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="post /users implemented" />
   </component>
 </project>

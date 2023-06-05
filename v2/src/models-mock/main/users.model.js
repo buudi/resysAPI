@@ -14,3 +14,16 @@ exports.createUser = (user_id, user) => {
 
     return { rows: newUser };
 }
+
+exports.findUserByUsername = (username) => {
+    const user = db.users.find(user => user.username === username);
+
+    return { rows: user };
+}
+
+
+exports.findUserByRole = (role) => {
+    const users = db.users.filter(user => user.role === role);
+
+    return { rows: users };
+}

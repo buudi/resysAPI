@@ -8,23 +8,50 @@ class UsersController {
 
 
     getAllUsers = async (req, res, next) => {
-        try {
-            // 1. query the database
-            const users = await this.model.getAllUsers();
+        const {username} = req.query;
+        const {role} = req.query;
+        if(username){
+            try {
+                // todo: query the db for the user with the username
+                const user = await this.model.findUserByUsername(username);
+                if (user instanceof Error)
+                    throw new Error(`Error getting user: ${user.message}`);
 
-            // 2. if the database returned an error, throw an error
-            if (users instanceof Error)
-                throw new Error(`Error getting users: ${users.message}`);
+                res.status(200).json(user.rows);
+            } catch (error) {
+                next(error);
+            }
+        } else if(role){
+            try {
+                const users = await this.model.findUserByRole(role);
+                if (users instanceof Error)
+                    throw new Error(`Error getting users: ${users.message}`);
 
-            // 3. else return the users
-            res.status(200).json({
-                users: users.rows
-            });
+                res.status(200).json(users.rows);
+            } catch (error) {
+                next(error);
+            }
+        } else {
+            try {
 
-        } catch (error) {
-            next(error);
+                // 1. query the database
+                const users = await this.model.getAllUsers();
+
+                // 2. if the database returned an error, throw an error
+                if (users instanceof Error)
+                    throw new Error(`Error getting users: ${users.message}`);
+
+                // 3. else return the users
+                res.status(200).json(
+                    users.rows
+                );
+
+            } catch (error) {
+                next(error);
+            }
         }
     }
+
 
     createUser = async (req, res, next) => {
         try {
@@ -49,6 +76,9 @@ class UsersController {
             next(error);
         }
     }
+
+
+
 }
 
 module.exports = UsersController;
