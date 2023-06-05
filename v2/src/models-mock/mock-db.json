@@ -48,12 +48,14 @@
     {
       "user_id": "1",
       "username": "admin",
+      "name": "ADMIN",
       "password": "admin",
       "role": "admin"
     },
     {
       "user_id": "2",
       "username": "user",
+        "name": "USER 1",
       "password": "user",
       "role": "user"
     }

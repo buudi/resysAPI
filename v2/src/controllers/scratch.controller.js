@@ -76,7 +76,6 @@ class ScratchController {
             next(error);
         }
     }
-
 }
 
 module.exports = ScratchController;

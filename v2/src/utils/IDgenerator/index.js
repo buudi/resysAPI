@@ -12,6 +12,7 @@ const generateInvoiceId = () => generateId("invoice");
 const generateContractId = () => generateId("contract");
 const generateExpenseId = () => generateId("expense");
 const generateReportId = () => generateId("report");
+const generateUserId = () => generateId("user");
 
 module.exports = {
     generateApartmentId,
@@ -21,4 +22,5 @@ module.exports = {
     generateContractId,
     generateExpenseId,
     generateReportId,
+    generateUserId
 };
