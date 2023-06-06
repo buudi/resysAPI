@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="refactored getAllUsers()">
-      <change afterPath="$PROJECT_DIR$/v2/src/utils/encryptor/bcrypt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="added appropriate response when username or role is not found, experimented a little with bcrypt but will implement in default db after finishing testing the mock db.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP404.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP404.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/models-mock/main/users.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models-mock/main/users.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/tests/main/users.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/tests/main/users.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +174,7 @@
       <workItem from="1685761485382" duration="42816000" />
       <workItem from="1685890559479" duration="1747000" />
       <workItem from="1685921154171" duration="21447000" />
-      <workItem from="1685965911803" duration="7440000" />
+      <workItem from="1685965911803" duration="7993000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -313,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685966175920</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added appropriate response when username or role is not found, experimented a little with bcrypt but will implement in default db after finishing testing the mock db.">
+      <created>1686026033437</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686026033437</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +354,7 @@
     <MESSAGE value="post /users implemented" />
     <MESSAGE value="query params for GET /users implemented" />
     <MESSAGE value="refactored getAllUsers()" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored getAllUsers()" />
+    <MESSAGE value="added appropriate response when username or role is not found, experimented a little with bcrypt but will implement in default db after finishing testing the mock db." />
+    <option name="LAST_COMMIT_MESSAGE" value="added appropriate response when username or role is not found, experimented a little with bcrypt but will implement in default db after finishing testing the mock db." />
   </component>
 </project>

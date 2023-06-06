@@ -45,8 +45,13 @@ describe("GET /users?username={{username}}", () => {
         expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
         expect(user.username).toEqual(expect.stringContaining("admin"));
     });
-});
+    it('should return a 404 error if the user is not found', async () => {
+        const response = await request(app).get("/users?username=foobar");
 
+        expect(response.statusCode).toBe(404);
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
+    });
+});
 
 describe("GET /users?role={{role}}", () => {
     it('should find the users with role in the db and return the users array', async () => {
@@ -56,5 +61,11 @@ describe("GET /users?role={{role}}", () => {
         expect(response.statusCode).toBe(200);
         expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
         expect(users.length).toBeGreaterThan(0);
+    });
+    it('should return a 404 error if the users are not found', async () => {
+        const response = await request(app).get("/users?role=foobar");
+
+        expect(response.statusCode).toBe(404);
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"));
     });
 });
