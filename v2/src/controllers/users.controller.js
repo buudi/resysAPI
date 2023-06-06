@@ -1,5 +1,5 @@
 const IDgenerator = require('../utils/IDgenerator');
-
+const HTTP404 = require("../lib/custom-errors/HTTP404")
 class UsersController {
     constructor(basePath) {
         this.basePath = basePath;
@@ -19,7 +19,10 @@ class UsersController {
             } else {
                 users = await this.model.getAllUsers();
             }
-
+            if(users.rows === undefined)
+                throw new HTTP404(username);
+            if(users.rows.length === 0)
+                throw new HTTP404(role);
             if (users instanceof Error) {
                 throw new Error(`Error getting users: ${users.message}`);
             }
@@ -30,7 +33,10 @@ class UsersController {
         }
     };
 
-    // todo: encrypt passwords with bcrypt
+    // todo:
+    //  encryptor passwords with bcrypt - store hash and salt
+    //  validate the password (and send appropriate message if invalid)
+
     createUser = async (req, res, next) => {
         try {
             // 1. get the data from the request body

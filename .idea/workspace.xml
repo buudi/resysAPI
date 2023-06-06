@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="post /users implemented">
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="refactored getAllUsers()">
+      <change afterPath="$PROJECT_DIR$/v2/src/utils/encryptor/bcrypt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP404.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/lib/custom-errors/HTTP404.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/models-mock/main/users.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models-mock/main/users.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/tests/main/users.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/tests/main/users.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,27 +55,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models-mock" />
@@ -174,7 +177,8 @@
       <workItem from="1685761309535" duration="86000" />
       <workItem from="1685761485382" duration="42816000" />
       <workItem from="1685890559479" duration="1747000" />
-      <workItem from="1685921154171" duration="20763000" />
+      <workItem from="1685921154171" duration="21447000" />
+      <workItem from="1685965911803" duration="7440000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -288,7 +292,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685937306989</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="query params for GET /users implemented">
+      <created>1685950505368</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685950505368</updated>
+    </task>
+    <task id="LOCAL-00018" summary="refactored getAllUsers()">
+      <created>1685951124899</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685951124899</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactored getAllUsers()">
+      <created>1685966175920</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685966175920</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,6 +349,8 @@
     <MESSAGE value="1st operational route yaay! GET /users" />
     <MESSAGE value="small fix (class naming)" />
     <MESSAGE value="post /users implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="post /users implemented" />
+    <MESSAGE value="query params for GET /users implemented" />
+    <MESSAGE value="refactored getAllUsers()" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored getAllUsers()" />
   </component>
 </project>
