@@ -23,9 +23,8 @@ class UsersController {
                 throw new HTTP404(username);
             if(users.rows.length === 0)
                 throw new HTTP404(role);
-            if (users instanceof Error) {
+            if (users instanceof Error)
                 throw new Error(`Error getting users: ${users.message}`);
-            }
 
             res.status(200).json(users.rows);
         } catch (error) {
@@ -34,7 +33,7 @@ class UsersController {
     };
 
     // todo:
-    //  encryptor passwords with bcrypt - store hash and salt
+    //  encrypt passwords with bcrypt - store hash and salt
     //  validate the password (and send appropriate message if invalid)
 
     createUser = async (req, res, next) => {
