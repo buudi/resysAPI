@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="added tests">
-      <change afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/createDB.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/createSchema.sql" afterDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="added migration queries">
+      <change afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/pgadmin/createSchema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/pgadmin/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/db/Documentation/Entities.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/v1/db/Documentation/Entities.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/users.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/models/db/migrations/createSchema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/createSchema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,40 +53,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.PostgreSQL, Greenplum, Redshift&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models\db\migrations\pgadmin" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models-mock" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\config" />
-      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.GET /users?role={{role}}">
     <configuration name="GET /users?role={{role}}" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/v2" />
       <envs />
@@ -100,7 +99,6 @@
     </configuration>
     <configuration name="GET /users?username={{username}}" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/v2" />
       <envs />
@@ -113,7 +111,6 @@
     </configuration>
     <configuration name="GET /users?username={username}" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/v2" />
       <envs />
@@ -126,7 +123,6 @@
     </configuration>
     <configuration name="GET /users?username={username}.should find the user with username in the db and return the user object" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/v2" />
       <envs />
@@ -140,7 +136,6 @@
     </configuration>
     <configuration name="POST /users" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/v2/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/v2" />
       <envs />
@@ -185,7 +180,11 @@
       <workItem from="1686712206614" duration="1158000" />
       <workItem from="1686717673816" duration="83000" />
       <workItem from="1687951015950" duration="2204000" />
-      <workItem from="1687962421546" duration="1419000" />
+      <workItem from="1687962421546" duration="1860000" />
+      <workItem from="1688915637726" duration="307000" />
+      <workItem from="1689523376399" duration="505000" />
+      <workItem from="1689524062109" duration="276000" />
+      <workItem from="1689524970674" duration="1938000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -334,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686026647658</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added migration queries">
+      <created>1687964178077</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1687964178077</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +380,7 @@
     <MESSAGE value="refactored getAllUsers()" />
     <MESSAGE value="added appropriate response when username or role is not found, experimented a little with bcrypt but will implement in default db after finishing testing the mock db." />
     <MESSAGE value="added tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests" />
+    <MESSAGE value="added migration queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="added migration queries" />
   </component>
 </project>

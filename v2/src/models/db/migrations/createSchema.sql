@@ -1,4 +1,4 @@
--- to be created before everything else
+-- recommended: use entireDB.sql inside the pgadmin directory instead of this file, it has all schema and data
 create table main_apartments
 (
     apt_id serial primary key,
