@@ -36,3 +36,11 @@ exports.updateAnApartmentInstance = async (apt_id, updates) => {
     const values = [aptObj.building_name, aptObj.apt_number, aptObj.total_rooms, apt_id];
     return await db.query(updateQuery, values);
 }
+
+exports.deleteApartment = async (apt_id) => {
+    const getAptQuery = "SELECT * FROM main_apartments WHERE apt_id = $1";
+    const query = "DELETE FROM main_apartments WHERE apt_id = $1";
+    const apt = await db.query(getAptQuery, [apt_id]);
+    await db.query(query, [apt_id]);
+    return apt;
+}

@@ -49,6 +49,7 @@ class ApartmentsController {
         }
     }
 
+
     updateAnApartmentInstance = async (req, res, next) => {
         try {
             const apt_id = req.query.apt_id;
@@ -68,6 +69,24 @@ class ApartmentsController {
             next(error);
         }
     }
+
+
+    deleteApartment = async (req, res, next) => {
+        try {
+            const apt_id = req.query.apt_id;
+
+            const result = await this.model.deleteApartment(apt_id);
+            res.status(200).json({
+                message: `Apartment with id ${apt_id} deleted successfully`,
+                apartmentData: result.rows[0]
+            });
+
+        } catch(error){
+            next(error);
+        }
+    }
+
 }
+
 
 module.exports = ApartmentsController;

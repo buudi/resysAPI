@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="set up apartments route, controller and model, implemented getAllApartments">
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented endpoint &quot;updateAnApartmentInstance&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/controllers/apartments.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/apartments.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/models/main/apartments.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/main/apartments.model.js" afterDir="false" />
@@ -188,7 +188,7 @@
       <workItem from="1689523376399" duration="505000" />
       <workItem from="1689524062109" duration="276000" />
       <workItem from="1689524970674" duration="2111000" />
-      <workItem from="1689561820553" duration="11289000" />
+      <workItem from="1689561820553" duration="12928000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -368,7 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689586066368</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="implemented endpoint &quot;updateAnApartmentInstance&quot;">
+      <option name="closed" value="true" />
+      <created>1689597913449</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1689597913449</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,6 +420,7 @@
     <MESSAGE value="generated migration data with seeders from pgadmin" />
     <MESSAGE value="implemented createApartmnet" />
     <MESSAGE value="set up apartments route, controller and model, implemented getAllApartments" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up apartments route, controller and model, implemented getAllApartments" />
+    <MESSAGE value="implemented endpoint &quot;updateAnApartmentInstance&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented endpoint &quot;updateAnApartmentInstance&quot;" />
   </component>
 </project>

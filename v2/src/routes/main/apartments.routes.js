@@ -8,6 +8,8 @@ module.exports = (modelPath)  => {
     router.get('/', controller.getAllApartments);
     router.post('/', controller.createAnApartmentInstance);
     router.put('/', controller.updateAnApartmentInstance);
+    router.delete('/', controller.deleteApartment);
+
 
     return router;
 }
