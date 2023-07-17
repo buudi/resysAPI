@@ -44,3 +44,8 @@ exports.deleteApartment = async (apt_id) => {
     await db.query(query, [apt_id]);
     return apt;
 }
+
+exports.getAnApartmentInstance = async (apt_id) => {
+    const query = "SELECT * FROM main_apartments WHERE apt_id = $1";
+    return await db.query(query, [apt_id]);
+}

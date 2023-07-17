@@ -7,6 +7,17 @@ class ApartmentsController {
 
     getAllApartments = async (req, res, next) => {
         try {
+            if (req.query.apt_id) {
+                const result = await this.model.getAnApartmentInstance(req.query.apt_id);
+
+                if (result instanceof Error)
+                    throw new Error(`Error getting apartment: ${result.message}`);
+
+                return res.status(200).json({
+                    data: result.rows[0]
+                });
+            }
+
             // 1. query the database
             const apartments = await this.model.getAllApartments();
 
@@ -16,8 +27,9 @@ class ApartmentsController {
 
             // 3. else, return the apartments
             res.status(200).json({
-                apartments: apartments.rows
+                data: apartments.rows
             });
+
         } catch (error) {
             next(error);
         }

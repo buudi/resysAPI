@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented endpoint &quot;updateAnApartmentInstance&quot;">
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented deleteApartment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/controllers/apartments.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/apartments.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v2/src/models/main/apartments.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/main/apartments.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/routes/main/apartments.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/main/apartments.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +187,7 @@
       <workItem from="1689523376399" duration="505000" />
       <workItem from="1689524062109" duration="276000" />
       <workItem from="1689524970674" duration="2111000" />
-      <workItem from="1689561820553" duration="12928000" />
+      <workItem from="1689561820553" duration="13605000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -376,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689597913449</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="implemented deleteApartment">
+      <option name="closed" value="true" />
+      <created>1689599443741</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689599443741</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +428,7 @@
     <MESSAGE value="implemented createApartmnet" />
     <MESSAGE value="set up apartments route, controller and model, implemented getAllApartments" />
     <MESSAGE value="implemented endpoint &quot;updateAnApartmentInstance&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented endpoint &quot;updateAnApartmentInstance&quot;" />
+    <MESSAGE value="implemented deleteApartment" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented deleteApartment" />
   </component>
 </project>
