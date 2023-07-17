@@ -1,5 +1,6 @@
 const scratch = require('./scratch.routes');
 const apartments = require('./main/apartments.routes');
+const expenses = require('./main/expenses.routes');
 // const users = require('./main/users.routes');
 
 module.exports = (app, modelMode) => {
@@ -12,5 +13,6 @@ module.exports = (app, modelMode) => {
 
     app.use('/scratch', scratch(modelPath));
     app.use('/apartments', apartments(modelPath));
+    app.use('/apartments/expenses', expenses(modelPath));
     // app.use('/users', users(modelPath));
 }

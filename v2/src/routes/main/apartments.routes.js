@@ -10,6 +10,5 @@ module.exports = (modelPath)  => {
     router.put('/', controller.updateAnApartmentInstance);
     router.delete('/', controller.deleteApartment);
 
-
     return router;
 }

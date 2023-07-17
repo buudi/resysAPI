@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented deleteApartment">
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented get an apartment instance">
+      <change afterPath="$PROJECT_DIR$/v2/src/controllers/expenses.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/models/main/expenses.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/routes/main/expenses.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/controllers/apartments.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/apartments.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/models/main/apartments.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/main/apartments.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/routes/main/apartments.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/main/apartments.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +190,7 @@
       <workItem from="1689523376399" duration="505000" />
       <workItem from="1689524062109" duration="276000" />
       <workItem from="1689524970674" duration="2111000" />
-      <workItem from="1689561820553" duration="13605000" />
+      <workItem from="1689561820553" duration="17417000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -383,7 +386,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689599443741</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="implemented get an apartment instance">
+      <option name="closed" value="true" />
+      <created>1689600115634</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1689600115634</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +415,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/v1" />
     </ignored-roots>
-    <MESSAGE value="created ID generator" />
     <MESSAGE value="created v2" />
     <MESSAGE value="fixed git issue" />
     <MESSAGE value="basic TDD" />
@@ -429,6 +439,7 @@
     <MESSAGE value="set up apartments route, controller and model, implemented getAllApartments" />
     <MESSAGE value="implemented endpoint &quot;updateAnApartmentInstance&quot;" />
     <MESSAGE value="implemented deleteApartment" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented deleteApartment" />
+    <MESSAGE value="implemented get an apartment instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented get an apartment instance" />
   </component>
 </project>
