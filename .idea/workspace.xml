@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="added migration queries">
-      <change afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/pgadmin/createSchema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/pgadmin/readme.md" afterDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="generated migration data with seeders from pgadmin">
+      <change afterPath="$PROJECT_DIR$/v2/src/models/main/users.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v2/src/models/mock-db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/models/db/migrations/createSchema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/db/migrations/createSchema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/config/db.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/config/db.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/models/scratch.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/scratch.model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/src/models",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +78,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models\db\migrations\pgadmin" />
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models-mock" />
@@ -184,7 +189,8 @@
       <workItem from="1688915637726" duration="307000" />
       <workItem from="1689523376399" duration="505000" />
       <workItem from="1689524062109" duration="276000" />
-      <workItem from="1689524970674" duration="1938000" />
+      <workItem from="1689524970674" duration="2111000" />
+      <workItem from="1689561820553" duration="4204000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -340,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687964178077</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="generated migration data with seeders from pgadmin">
+      <option name="closed" value="true" />
+      <created>1689527073575</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689527073575</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +395,7 @@
     <MESSAGE value="added appropriate response when username or role is not found, experimented a little with bcrypt but will implement in default db after finishing testing the mock db." />
     <MESSAGE value="added tests" />
     <MESSAGE value="added migration queries" />
-    <option name="LAST_COMMIT_MESSAGE" value="added migration queries" />
+    <MESSAGE value="generated migration data with seeders from pgadmin" />
+    <option name="LAST_COMMIT_MESSAGE" value="generated migration data with seeders from pgadmin" />
   </component>
 </project>

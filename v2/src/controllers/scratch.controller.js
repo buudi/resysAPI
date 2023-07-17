@@ -69,8 +69,9 @@ class ScratchController {
                 throw new Error(`Error creating apartment: ${apartments.message}`);
 
             // 4. else return the apartments
+
             res.status(201).json({
-                apartments: apartments.rows
+                msg: `${apartment.building_name} was created successfully with id ${apartment.apt_number}`
             })
         } catch (error) {
             next(error);
