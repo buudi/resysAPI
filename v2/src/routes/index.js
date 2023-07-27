@@ -4,6 +4,7 @@ const expenses = require('./main/expenses.routes');
 const rooms = require('./main/rooms.routes');
 const tenants = require("./main/tenants.routes");
 const contracts = require("./main/contracts.routes");
+const invoices = require("./main/invoices.routes");
 // const users = require('./main/users.routes');
 
 module.exports = (app, modelMode) => {
@@ -20,5 +21,6 @@ module.exports = (app, modelMode) => {
     app.use('/apartments/rooms',rooms(modelPath));
     app.use('/tenants', tenants(modelPath));
     app.use('/contracts', contracts(modelPath));
+    app.use('/invoices', invoices(modelPath));
     // app.use('/users', users(modelPath));
 }

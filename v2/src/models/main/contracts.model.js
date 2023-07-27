@@ -1,5 +1,4 @@
 const IDgenerator = require('../../utils/IDgenerator');
-
 const db = require("../index");
 
 exports.getAllContracts = async () => {

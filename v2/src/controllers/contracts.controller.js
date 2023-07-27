@@ -1,5 +1,3 @@
-const IDgenerator = require('../utils/IDgenerator');
-
 class ContractsController {
     constructor(pathPassed) {
         this.basePath = pathPassed;
