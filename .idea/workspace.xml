@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implemented rooms endpoints">
-      <change afterPath="$PROJECT_DIR$/v2/src/controllers/tenants.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/src/models/main/tenants.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v2/src/routes/main/tenants.routes.js" afterDir="false" />
+    <list default="true" id="f7fad4f1-552c-4f6d-bafb-c13f04f53519" name="Changes" comment="implement tenants:  get all tenants&#10;                   - add tenant&#10;                   - get a specific tenant information&#10;                   - update tenant&#10;                   - move tenant&#10;moving tenants requires validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/db/Documentation/Entities.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/v1/db/Documentation/Entities.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/scratch.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/controllers/tenants.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/controllers/tenants.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/models/main/tenants.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/models/main/tenants.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v2/src/routes/main/tenants.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/v2/src/routes/main/tenants.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +48,38 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2QPEL6twvOXcK8Jib8nkbrv7Sof" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/src/models",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/src/models&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/Abdullah Alnadhari/Documents/REsys/resysAPI/v2/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Abdullah Alnadhari\Documents\REsys\resysAPI\v2\src\models" />
@@ -189,7 +193,10 @@
       <workItem from="1689523376399" duration="505000" />
       <workItem from="1689524062109" duration="276000" />
       <workItem from="1689524970674" duration="2111000" />
-      <workItem from="1689561820553" duration="26644000" />
+      <workItem from="1689561820553" duration="26964000" />
+      <workItem from="1690282287055" duration="109000" />
+      <workItem from="1690282507579" duration="642000" />
+      <workItem from="1690348307401" duration="12057000" />
     </task>
     <task id="LOCAL-00001" summary="created ID generator">
       <created>1685251454999</created>
@@ -409,7 +416,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689618944815</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="implement tenants:  get all tenants&#10;                   - add tenant&#10;                   - get a specific tenant information&#10;                   - update tenant&#10;                   - move tenant&#10;moving tenants requires validation">
+      <option name="closed" value="true" />
+      <created>1689663842625</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689663842625</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +445,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/v1" />
     </ignored-roots>
-    <MESSAGE value="basic TDD" />
     <MESSAGE value="minor modifications" />
     <MESSAGE value="implemented dependency injection to give way for mock-models, we are going to use it later on for testing our controllers without having to directly access the database" />
     <MESSAGE value="implemented error handling for database" />
@@ -455,6 +469,7 @@
     <MESSAGE value="implemented get an apartment instance" />
     <MESSAGE value="implemented all expenses functions: - get All expenses&#10;                                    &#9;- get an expense information&#10;                                    &#9;- add an apartment expense&#10;                                    &#9;- update an apartment expense&#10;                                    &#9;- delete an apartment expense" />
     <MESSAGE value="implemented rooms endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented rooms endpoints" />
+    <MESSAGE value="implement tenants:  get all tenants&#10;                   - add tenant&#10;                   - get a specific tenant information&#10;                   - update tenant&#10;                   - move tenant&#10;moving tenants requires validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement tenants:  get all tenants&#10;                   - add tenant&#10;                   - get a specific tenant information&#10;                   - update tenant&#10;                   - move tenant&#10;moving tenants requires validation" />
   </component>
 </project>

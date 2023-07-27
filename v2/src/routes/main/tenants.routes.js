@@ -7,7 +7,9 @@ module.exports = (modelPath) => {
     router.get('/', controller.getAllTenants);
     router.post('/', controller.addTenant);
     router.put('/', controller.updateTenant);
-    router.patch('/', controller.moveTenant);
+    router.patch('/move-to-room', controller.moveTenantToRoom);
+    // router.patch('/move-to-apartment' , controller.moveTenantToApartment);
+    // router.delete('/archiveTenant', controller.archiveTenant);
 
     return router;
 }

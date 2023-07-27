@@ -3,11 +3,16 @@ class ScratchController {
     constructor(pathPassed) {
         this.basePath = pathPassed;
         this.model = require(`${this.basePath}/scratch.model`);
+        // this.model = require(`${this.basePath}/main/tenants.model`);
+
     }
 
-    printHello = (req, res, next) => {
+    printHello = async (req, res, next) => {
+        const newRoom_id = req.query.room_id;
+        const tenant_id = req.query.tenant_id;
+        const test = await this.model.verifyRoomInApartment(newRoom_id, tenant_id);
         res.status(200).json({
-            message: "Hello from the server"
+            data: test,
         });
     }
 

@@ -64,32 +64,33 @@ class TenantsController {
         }
     }
 
-    moveTenant = async (req, res, next) => {
+    moveTenantToRoom = async (req, res, next) => {
         const tenant_id = req.query.tenant_id;
         const room_id = req.query.room_id;
 
         let message = `Tenant id:${tenant_id} moved successfully to room_id:${room_id}`;
-        if(req.query.apt_id){
-            try {
-                const result = await this.model.moveToApartment(req.query.apt_id, tenant_id);
-                if (result instanceof Error)
-                    throw new Error(`Error moving tenant: ${result.message}`);
-                message = `Tenant id:${tenant_id} moved successfully to apt_id:${req.query.apt_id} and room_id:${room_id}`;
-            } catch(error){
-                next(error);
-            }
-        }
         try {
             const result = await this.model.moveToRoom(room_id, tenant_id);
             if (result instanceof Error)
                 throw new Error(`Error moving tenant: ${result.message}`);
-            res.status(201).json({
-                message: message,
-            });
+
+            let statusCode = 201;
+            if(result.result === false)
+                statusCode = 400;
+
+            res.status(statusCode).json(result);
         } catch (error) {
             next(error);
         }
-    }
+    } // end of moveTenantToRoom
+
+    // moveTenantToApartment = async (req, res, next) => {
+    //
+    // }
+
+    // archiveTenant = async (req, res, next) => {
+    //
+    // }
 
 }
 
