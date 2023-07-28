@@ -24,3 +24,33 @@ exports.addAnInvoice = async (invoiceObject) => {
     }
     return await db.query(query, queryValues);
 } // end of addAnInvoice
+
+exports.updateAnInvoice = async (invoice_id, updates) => {
+    const getInvoiceQuery = "SELECT * FROM invoices WHERE invoice_id = $1;";
+    const getInvoiceValues = [invoice_id];
+    const invoice = await db.query(getInvoiceQuery, getInvoiceValues);
+    let invoiceObj = invoice.rows[0];
+
+    function updateInvoice(invoice, updates) {
+        for (let key in updates) {
+            if (invoice.hasOwnProperty(key)) {
+                invoice[key] = updates[key];
+            }
+        }
+    }
+
+    updateInvoice(invoiceObj, updates);
+
+    const updateInvoiceQuery = "UPDATE invoices SET tenant_id = $1, invoice_date = $2, amount = $3, amount_paid = $4, notes = $5 WHERE invoice_id = $6";
+    const updateInvoiceValues = [invoiceObj.tenant_id, invoiceObj.invoice_date, invoiceObj.amount, invoiceObj.amount_paid, invoiceObj.notes, invoice_id];
+    return await db.query(updateInvoiceQuery, updateInvoiceValues);
+} // end of updateAnInvoice
+
+
+
+
+
+
+
+
+

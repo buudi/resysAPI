@@ -79,6 +79,23 @@ class ContractsController {
         }
     } // end of archiveContract
 
+    updateAContract = async (req, res, next) => {
+        try{
+            const contract_id = req.query.contract_id;
+            const updates = req.body;
+            const result = await this.model.updateAContract(contract_id, updates);
+
+            if(result instanceof Error)
+                throw new Error(`Error updating contract: ${result.message}`);
+
+            res.status(200).json({
+                message: `Contract with id:${contract_id} updated successfully`,
+                result: result
+            });
+        } catch(error){
+            next(error);
+        }
+    } // end of updateAContract
 }
 
 module.exports = ContractsController;

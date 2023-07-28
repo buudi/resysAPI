@@ -43,6 +43,19 @@ class InvoicesController {
         }
     } // end of addAnInvoice
 
+    updateAnInvoice = async (req, res, next) => {
+        try {
+            const result = await this.model.updateAnInvoice(req.query.invoice_id, req.body);
+            if (result instanceof Error)
+                throw new Error(`Error updating invoice: ${result.message}`);
+            return res.status(200).json({
+                msg: `Invoice ${req.query.invoice_id} updated successfully`
+            });
+        } catch(error){
+            next(error);
+        }
+    } // end of updateAnInvoice
+
 }
 
 module.exports = InvoicesController;

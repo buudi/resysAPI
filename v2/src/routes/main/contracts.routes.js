@@ -10,6 +10,7 @@ module.exports = (modelPath)  => {
     router.get('/', controller.getAllContracts);
     router.post('/', controller.addAContract);
     router.delete('/', controller.archiveContract);
+    router.put('/', controller.updateAContract);
 
     return router;
 }
