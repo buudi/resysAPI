@@ -1,7 +1,8 @@
+require('dotenv').config();
 const {makeApp} = require("./src/app");
 const config = require("./config/app.config");
 
-// "default", "mock", ??"development".
+// "default" or "mock".
 const app = makeApp("default");
 // check routes/index.js for the model choice.
 

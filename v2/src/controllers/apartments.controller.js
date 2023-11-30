@@ -26,9 +26,7 @@ class ApartmentsController {
                 throw new Error(`Error getting apartments: ${apartments.message}`);
 
             // 3. else, return the apartments
-            res.status(200).json({
-                data: apartments.rows
-            });
+            res.status(200).json(apartments.rows);
 
         } catch (error) {
             next(error);
