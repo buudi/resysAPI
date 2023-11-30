@@ -1,7 +1,7 @@
 module.exports = {
-    user: "postgres",
+    user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    host: "localhost",
+    host: process.env.DB_HOST,
     port: 5432,
-    database: "resysdev",
+    database: process.env.DATABASE,
 }
