@@ -1,16 +1,16 @@
 const db = require("../index");
 
-exports.getAllRooms = async (apt_id) => {
-    const query = "SELECT * FROM  rooms WHERE apt_id=$1;";
-    const values = [apt_id];
+exports.getAllRooms = async (property_id) => {
+    const query = "SELECT * FROM  rooms WHERE property_id=$1;";
+    const values = [property_id];
     return await db.query(query, values);
 }
 
-exports.addRoom = async (apt_id, room) => {
+exports.addRoom = async (property_id, room) => {
     const query = "INSERT INTO public.rooms(\n" +
-        "\tapt_id, room_number, room_type, capacity, vacant)\n" +
+        "\tproperty_id, room_number, room_type, capacity, vacant)\n" +
         "\tVALUES ($1, $2, $3, $4, $5);"
-    const values = [apt_id, room.room_number, room.room_type, room.capacity, true];
+    const values = [property_id, room.room_number, room.room_type, room.capacity, true];
     return await db.query(query, values);
 }
 

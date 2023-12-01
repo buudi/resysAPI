@@ -7,20 +7,26 @@ class TenantsController {
 
     getAllTenants = async (req, res, next) => {
         if (req.query.tenant_id){
+
             try{
+
                 const result = await this.model.getTenant(req.query.tenant_id);
                 if (result instanceof Error)
                     throw new Error(`Error getting tenant: ${result.message}`);
                 return res.status(200).json({
                     data: result.rows[0]
                 });
+
             } catch(error) {
                 next(error);
             }
-        }
+
+        } 
+
         try {
-            const apt_id = req.query.apt_id;
-            const results = await this.model.getAllTenants(apt_id);
+
+            const property_id = req.query.property_id;
+            const results = await this.model.getAllTenants(property_id);
 
             if(results instanceof Error)
                 throw new Error(`Error getting tenants: ${results.message}`);
@@ -31,23 +37,28 @@ class TenantsController {
         } catch(error){
             next(error);
         }
-    }
+
+    } // end of getAllTenants
 
     addTenant = async (req, res, next) => {
-        const apt_id = req.query.apt_id;
+        const property_id = req.query.property_id;
         const room_id = req.query.room_id;
         const tenant = req.body;
+
         try {
-            const result = await this.model.addTenant(apt_id, room_id, tenant);
+
+            const result = await this.model.addTenant(property_id, room_id, tenant);
             if (result instanceof Error)
                 throw new Error(`Error adding tenant: ${result.message}`);
             res.status(201).json({
-                message: `Tenant for apartment id:${apt_id} and room_id:${room_id} added successfully`,
+                message: `Tenant for property id:${property_id} and room_id:${room_id} added successfully`,
             });
+
         } catch(error){
             next(error);
         }
-    }
+
+    } // end of addTenant
 
     updateTenant = async (req, res, next) => {
         const tenant_id = req.query.tenant_id;

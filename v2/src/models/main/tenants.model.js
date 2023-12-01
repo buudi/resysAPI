@@ -2,9 +2,9 @@ const IDgenerator = require("../../utils/IDgenerator");
 const db = require("../index");
 
 
-exports.getAllTenants = async (apt_id) => {
-    const query = "Select * from tenants where apt_id=$1";
-    const values = [apt_id];
+exports.getAllTenants = async (property_id) => {
+    const query = "Select * from tenants where property_id=$1";
+    const values = [property_id];
     return await db.query(query, values);
 }
 
@@ -14,12 +14,12 @@ exports.getTenant = async (tenant_id) => {
     return await db.query(query, values);
 }
 
-exports.addTenant = async (apt_id, room_id, tenant) => {
+exports.addTenant = async (property_id, room_id, tenant) => {
     const query= "INSERT INTO tenants \n" +
-        "(tenant_id, room_id, name, emirates_id, phone_number, email, date_settle_in, apt_id) \n" +
+        "(tenant_id, room_id, name, emirates_id, phone_number, email, date_settle_in, property_id) \n" +
         "VALUES ($1, $2, $3, $4, $5, $6, $7, $8)"
     const tenant_id = IDgenerator.generateTenantId();
-    const values = [tenant_id, room_id, tenant.name, tenant.emirates_id, tenant.phone_number, tenant.email, tenant.date_settle_in, apt_id];
+    const values = [tenant_id, room_id, tenant.name, tenant.emirates_id, tenant.phone_number, tenant.email, tenant.date_settle_in, property_id];
     return await db.query(query, values);
 }
 
@@ -44,24 +44,24 @@ exports.updateTenant = async (tenant_id, updates) => {
     return await db.query(updateTenantQuery, updateTenantValues);
 }
 
-exports.moveToApartment = async (apt_id, tenant_id) => {
-    const query = "update tenants set apt_id=$1 where tenant_id=$2;";
-    const values = [apt_id, tenant_id];
+exports.moveToApartment = async (property_id, tenant_id) => {
+    const query = "update tenants set property_id=$1 where tenant_id=$2;";
+    const values = [property_id, tenant_id];
     return await db.query(query, values);
 }
 
 async function verifyRoomInApartment(newRoom_id, tenant_id) {
-    const currentAptQuery = "select apt_id from tenants where tenant_id=$1;";
+    const currentAptQuery = "select property_id from tenants where tenant_id=$1;";
     const currentAptQueryValues = [tenant_id];
     const {rows: currentApt_id} = await db.query(currentAptQuery, currentAptQueryValues);
     
-    const checkAptQuery = "select apt_id from rooms where room_id=$1;";
+    const checkAptQuery = "select property_id from rooms where room_id=$1;";
     const checkAptQueryValues = [newRoom_id];
     const {rows: checkApt_id} = await db.query(checkAptQuery, checkAptQueryValues);
 
-    const failMsg = `room ${newRoom_id} is not in the same apartment as tenant ${tenant_id}, tenant is in apt ${currentApt_id[0].apt_id} while room is in apt ${checkApt_id[0].apt_id}`;
-    const successMsg = `room ${newRoom_id} is in the same apartment as tenant ${tenant_id}, tenant is in apt ${currentApt_id[0].apt_id} while room is in apt ${checkApt_id[0].apt_id}`;
-    if(checkApt_id[0].apt_id !== currentApt_id[0].apt_id){
+    const failMsg = `room ${newRoom_id} is not in the same apartment as tenant ${tenant_id}, tenant is in apt ${currentApt_id[0].property_id} while room is in apt ${checkApt_id[0].property_id}`;
+    const successMsg = `room ${newRoom_id} is in the same apartment as tenant ${tenant_id}, tenant is in apt ${currentApt_id[0].property_id} while room is in apt ${checkApt_id[0].property_id}`;
+    if(checkApt_id[0].property_id !== currentApt_id[0].property_id){
         return {
             response: false,
             message: failMsg
@@ -78,7 +78,7 @@ async function verifyRoomIsVacant(newRoom_id){
     const query = "select vacant from rooms where room_id=$1;";
     const values = [newRoom_id];
     const {rows: vacant} = await db.query(query, values);
-    return vacant[0].vacant;
+    return vacant[0].vacant; // return is boolean
 } // end of verifyRoomIsVacant
 
 async function checkCapacity(newRoom_id){
@@ -122,11 +122,15 @@ exports.moveToRoom = async (newRoom_id, tenant_id) => {
     const checkAssignedCapacityQuery = "select capacity from rooms where room_id=$1";
     const assignedCapacity = await db.query(checkAssignedCapacityQuery, [newRoom_id]);
     //   3.2 if the room is full (currentCapacity === assignedCapacity), update the vacant column to false
-    //   3.3 if the room is not full (count < rooms.capacity), do nothing
+    
     if (currentCapacity === assignedCapacity){
         const updateVacantQuery = "update rooms set vacant=false where room_id=$1";
         await db.query(updateVacantQuery, newRoom_id);
     }
+
+    //   3.3 if the room is not full (count < rooms.capacity), do nothing
+    // .........
+
     //  4. Return suitable message with a 200 status code (status in controller)
     return {
         result: true,

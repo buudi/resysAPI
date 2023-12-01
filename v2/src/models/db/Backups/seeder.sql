@@ -5,7 +5,7 @@
 -- Dumped from database version 15.4 (Ubuntu 15.4-1ubuntu1)
 -- Dumped by pg_dump version 16.0
 
--- Started on 2023-11-30 21:08:27
+-- Started on 2023-12-01 12:57:56
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -29,7 +29,7 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.apartment_expenses (
     expense_id integer NOT NULL,
-    apt_id integer NOT NULL,
+    property_id integer NOT NULL,
     month_year text NOT NULL,
     amount_paid integer NOT NULL,
     notes text
@@ -56,7 +56,7 @@ CREATE SEQUENCE public.apartment_expenses_apt_id_seq
 -- Name: apartment_expenses_apt_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.apartment_expenses_apt_id_seq OWNED BY public.apartment_expenses.apt_id;
+ALTER SEQUENCE public.apartment_expenses_apt_id_seq OWNED BY public.apartment_expenses.property_id;
 
 
 --
@@ -119,9 +119,9 @@ CREATE TABLE public.invoices (
 --
 
 CREATE TABLE public.properties (
-    apt_id integer NOT NULL,
+    property_id integer NOT NULL,
     building_name text NOT NULL,
-    apt_number text NOT NULL,
+    property_number text NOT NULL,
     total_rooms integer,
     property_type text
 );
@@ -147,7 +147,7 @@ CREATE SEQUENCE public.main_apartments_apt_id_seq
 -- Name: main_apartments_apt_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.main_apartments_apt_id_seq OWNED BY public.properties.apt_id;
+ALTER SEQUENCE public.main_apartments_apt_id_seq OWNED BY public.properties.property_id;
 
 
 --
@@ -157,7 +157,7 @@ ALTER SEQUENCE public.main_apartments_apt_id_seq OWNED BY public.properties.apt_
 
 CREATE TABLE public.monthly_reports (
     report_id text NOT NULL,
-    apt_id integer NOT NULL,
+    property_id integer NOT NULL,
     month_year text NOT NULL,
     total_rent_due integer NOT NULL,
     total_rent_paid integer NOT NULL,
@@ -185,7 +185,7 @@ CREATE SEQUENCE public.monthly_reports_apt_id_seq
 -- Name: monthly_reports_apt_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.monthly_reports_apt_id_seq OWNED BY public.monthly_reports.apt_id;
+ALTER SEQUENCE public.monthly_reports_apt_id_seq OWNED BY public.monthly_reports.property_id;
 
 
 --
@@ -195,7 +195,7 @@ ALTER SEQUENCE public.monthly_reports_apt_id_seq OWNED BY public.monthly_reports
 
 CREATE TABLE public.rooms (
     room_id integer NOT NULL,
-    apt_id integer NOT NULL,
+    property_id integer NOT NULL,
     room_number text NOT NULL,
     room_type text,
     capacity integer,
@@ -223,7 +223,7 @@ CREATE SEQUENCE public.rooms_apt_id_seq
 -- Name: rooms_apt_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.rooms_apt_id_seq OWNED BY public.rooms.apt_id;
+ALTER SEQUENCE public.rooms_apt_id_seq OWNED BY public.rooms.property_id;
 
 
 --
@@ -262,7 +262,7 @@ CREATE TABLE public.tenants (
     phone_number integer NOT NULL,
     email text,
     date_settle_in date NOT NULL,
-    apt_id integer
+    property_id integer
 );
 
 
@@ -299,26 +299,26 @@ ALTER TABLE ONLY public.apartment_expenses ALTER COLUMN expense_id SET DEFAULT n
 
 --
 -- TOC entry 3230 (class 2604 OID 16433)
--- Name: apartment_expenses apt_id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: apartment_expenses property_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.apartment_expenses ALTER COLUMN apt_id SET DEFAULT nextval('public.apartment_expenses_apt_id_seq'::regclass);
+ALTER TABLE ONLY public.apartment_expenses ALTER COLUMN property_id SET DEFAULT nextval('public.apartment_expenses_apt_id_seq'::regclass);
 
 
 --
 -- TOC entry 3232 (class 2604 OID 16435)
--- Name: monthly_reports apt_id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: monthly_reports property_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.monthly_reports ALTER COLUMN apt_id SET DEFAULT nextval('public.monthly_reports_apt_id_seq'::regclass);
+ALTER TABLE ONLY public.monthly_reports ALTER COLUMN property_id SET DEFAULT nextval('public.monthly_reports_apt_id_seq'::regclass);
 
 
 --
 -- TOC entry 3231 (class 2604 OID 16434)
--- Name: properties apt_id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: properties property_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.properties ALTER COLUMN apt_id SET DEFAULT nextval('public.main_apartments_apt_id_seq'::regclass);
+ALTER TABLE ONLY public.properties ALTER COLUMN property_id SET DEFAULT nextval('public.main_apartments_apt_id_seq'::regclass);
 
 
 --
@@ -331,10 +331,10 @@ ALTER TABLE ONLY public.rooms ALTER COLUMN room_id SET DEFAULT nextval('public.r
 
 --
 -- TOC entry 3234 (class 2604 OID 16437)
--- Name: rooms apt_id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: rooms property_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.rooms ALTER COLUMN apt_id SET DEFAULT nextval('public.rooms_apt_id_seq'::regclass);
+ALTER TABLE ONLY public.rooms ALTER COLUMN property_id SET DEFAULT nextval('public.rooms_apt_id_seq'::regclass);
 
 
 --
@@ -393,18 +393,19 @@ INSERT INTO public.invoices VALUES ('invoice/8898', 'tenant/3003', '2023-07-28',
 -- Data for Name: properties; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.properties VALUES (1, 'الاتحاد', '602', 5, NULL);
-INSERT INTO public.properties VALUES (2, 'الاندلس', '805', 4, NULL);
-INSERT INTO public.properties VALUES (3, 'Sunny Heights', '101', 3, NULL);
-INSERT INTO public.properties VALUES (4, 'Maple Gardens', '207', 5, NULL);
-INSERT INTO public.properties VALUES (5, 'Ocean View Plaza', '412', 8, NULL);
-INSERT INTO public.properties VALUES (6, 'Pine Ridge Residences', '550', 4, NULL);
-INSERT INTO public.properties VALUES (7, 'Meadowside Manor', '625', 6, NULL);
-INSERT INTO public.properties VALUES (8, 'Urban Oasis Towers', '804', 2, NULL);
-INSERT INTO public.properties VALUES (9, 'Cityscape Apartments', '916', 7, NULL);
-INSERT INTO public.properties VALUES (10, 'Harbor Lights Residency', '1030', 5, NULL);
-INSERT INTO public.properties VALUES (11, 'Majestic View Estates', '1201', 4, NULL);
-INSERT INTO public.properties VALUES (12, 'Tranquil Haven Homes', '1315', 9, NULL);
+INSERT INTO public.properties VALUES (1, 'الاتحاد', '602', 5, 'apartment');
+INSERT INTO public.properties VALUES (2, 'الاندلس', '805', 4, 'apartment');
+INSERT INTO public.properties VALUES (3, 'Sunny Heights', '101', 3, 'apartment');
+INSERT INTO public.properties VALUES (4, 'Maple Gardens', '207', 5, 'apartment');
+INSERT INTO public.properties VALUES (5, 'Ocean View Plaza', '412', 8, 'apartment');
+INSERT INTO public.properties VALUES (6, 'Pine Ridge Residences', '550', 4, 'apartment');
+INSERT INTO public.properties VALUES (7, 'Meadowside Manor', '625', 6, 'apartment');
+INSERT INTO public.properties VALUES (8, 'Urban Oasis Towers', '804', 2, 'apartment');
+INSERT INTO public.properties VALUES (9, 'Cityscape Apartments', '916', 7, 'apartment');
+INSERT INTO public.properties VALUES (10, 'Harbor Lights Residency', '1030', 5, 'apartment');
+INSERT INTO public.properties VALUES (11, 'Majestic View Estates', '1201', 4, 'apartment');
+INSERT INTO public.properties VALUES (12, 'Tranquil Haven Homes', '1315', 9, 'apartment');
+INSERT INTO public.properties VALUES (16, 'Testing remote db', '1315', 9, 'apartment');
 
 
 --
@@ -451,7 +452,7 @@ SELECT pg_catalog.setval('public.apartment_expenses_apt_id_seq', 1, false);
 -- Name: apartment_expenses_expense_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.apartment_expenses_expense_id_seq', 4, true);
+SELECT pg_catalog.setval('public.apartment_expenses_expense_id_seq', 5, true);
 
 
 --
@@ -460,7 +461,7 @@ SELECT pg_catalog.setval('public.apartment_expenses_expense_id_seq', 4, true);
 -- Name: main_apartments_apt_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.main_apartments_apt_id_seq', 12, true);
+SELECT pg_catalog.setval('public.main_apartments_apt_id_seq', 16, true);
 
 
 --
@@ -487,7 +488,7 @@ SELECT pg_catalog.setval('public.rooms_apt_id_seq', 1, false);
 -- Name: rooms_room_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.rooms_room_id_seq', 9, true);
+SELECT pg_catalog.setval('public.rooms_room_id_seq', 10, true);
 
 
 --
@@ -532,7 +533,7 @@ ALTER TABLE ONLY public.invoices
 --
 
 ALTER TABLE ONLY public.properties
-    ADD CONSTRAINT main_apartments_pkey PRIMARY KEY (apt_id);
+    ADD CONSTRAINT main_apartments_pkey PRIMARY KEY (property_id);
 
 
 --
@@ -564,11 +565,11 @@ ALTER TABLE ONLY public.tenants
 
 --
 -- TOC entry 3250 (class 2606 OID 16453)
--- Name: apartment_expenses apartment_expenses_apt_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: apartment_expenses apartment_expenses_property_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.apartment_expenses
-    ADD CONSTRAINT apartment_expenses_apt_id_fkey FOREIGN KEY (apt_id) REFERENCES public.properties(apt_id);
+    ADD CONSTRAINT apartment_expenses_property_id_fkey FOREIGN KEY (property_id) REFERENCES public.properties(property_id);
 
 
 --
@@ -591,29 +592,29 @@ ALTER TABLE ONLY public.invoices
 
 --
 -- TOC entry 3253 (class 2606 OID 16468)
--- Name: monthly_reports monthly_reports_apt_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: monthly_reports monthly_reports_property_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.monthly_reports
-    ADD CONSTRAINT monthly_reports_apt_id_fkey FOREIGN KEY (apt_id) REFERENCES public.properties(apt_id);
+    ADD CONSTRAINT monthly_reports_property_id_fkey FOREIGN KEY (property_id) REFERENCES public.properties(property_id);
 
 
 --
 -- TOC entry 3254 (class 2606 OID 16473)
--- Name: rooms rooms_apt_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: rooms rooms_property_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.rooms
-    ADD CONSTRAINT rooms_apt_id_fkey FOREIGN KEY (apt_id) REFERENCES public.properties(apt_id);
+    ADD CONSTRAINT rooms_property_id_fkey FOREIGN KEY (property_id) REFERENCES public.properties(property_id);
 
 
 --
 -- TOC entry 3255 (class 2606 OID 16478)
--- Name: tenants tenants_apt_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: tenants tenants_property_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.tenants
-    ADD CONSTRAINT tenants_apt_id_fkey FOREIGN KEY (apt_id) REFERENCES public.properties(apt_id);
+    ADD CONSTRAINT tenants_property_id_fkey FOREIGN KEY (property_id) REFERENCES public.properties(property_id);
 
 
 --
@@ -625,7 +626,7 @@ ALTER TABLE ONLY public.tenants
     ADD CONSTRAINT tenants_room_id_fkey FOREIGN KEY (room_id) REFERENCES public.rooms(room_id);
 
 
--- Completed on 2023-11-30 21:08:33
+-- Completed on 2023-12-01 12:57:59
 
 --
 -- PostgreSQL database dump complete

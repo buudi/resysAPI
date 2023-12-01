@@ -1,7 +1,7 @@
 const db = require("../index");
 
 exports.getAllExpenses = async () => {
-    const query = "SELECT expense_id, apt_id, month_year, amount_paid, notes\n" +
+    const query = "SELECT expense_id, property_id, month_year, amount_paid, notes\n" +
         "\tFROM public.apartment_expenses;";
     return await db.query(query);
 }
@@ -12,16 +12,16 @@ exports.getAnExpense = async (expense_id) => {
     return await db.query(query, values);
 }
 
-exports.addExpense = async (apt_id, expense) => {
+exports.addExpense = async (property_id, expense) => {
     const query = "INSERT INTO public.apartment_expenses(\n" +
-        "\tapt_id, month_year, amount_paid, notes)\n" +
+        "\tproperty_id, month_year, amount_paid, notes)\n" +
         "\tVALUES ($1, $2, $3, $4);";
 
     if(!expense.notes){
         expense.notes = "";
     }
 
-    const values = [apt_id, expense.month_year, expense.amount_paid, expense.notes];
+    const values = [property_id, expense.month_year, expense.amount_paid, expense.notes];
 
     const result = await db.query(query, values);
 
@@ -43,8 +43,8 @@ exports.updateExpense = async (expense_id, updates) => {
 
     updateExpense(expenseObj, updates);
 
-    const updateExpenseQuery = "UPDATE apartment_expenses SET apt_id = $1, month_year = $2, amount_paid = $3, notes = $4 WHERE expense_id = $5";
-    const updateExpenseValues = [expenseObj.apt_id, expenseObj.month_year, expenseObj.amount_paid, expenseObj.notes, expense_id];
+    const updateExpenseQuery = "UPDATE apartment_expenses SET property_id = $1, month_year = $2, amount_paid = $3, notes = $4 WHERE expense_id = $5";
+    const updateExpenseValues = [expenseObj.property_id, expenseObj.month_year, expenseObj.amount_paid, expenseObj.notes, expense_id];
     return await db.query(updateExpenseQuery, updateExpenseValues);
 
 }

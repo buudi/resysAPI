@@ -8,6 +8,7 @@ class ExpensesController {
 
     getAllExpenses = async (req, res, next) => {
         try{
+            
             // get a specific expense:
             if(req.query.expense_id){
                 const result = await this.model.getAnExpense(req.query.expense_id);
@@ -15,9 +16,7 @@ class ExpensesController {
                 if(result instanceof Error)
                     throw new Error(`Error getting expense: ${result.message}`);
 
-                return res.status(200).json({
-                    data: result.rows[0]
-                });
+                return res.status(200).json(result.rows[0]);
             }
 
             // get all expenses:
@@ -26,9 +25,7 @@ class ExpensesController {
             if(expenses instanceof Error)
                 throw new Error(`Error getting expenses: ${expenses.message}`);
 
-            res.status(200).json({
-                data: expenses.rows
-            });
+            res.status(200).json(expenses.rows);
 
         } catch(error){
             next(error);
@@ -38,18 +35,18 @@ class ExpensesController {
     addExpense = async (req, res, next) => {
         try{
             const expense = req.body;
-            const apt_id = req.query.apt_id;
+            const property_id = req.query.property_id;
 
             if(!expense.month_year || !expense.amount_paid)
                 throw new Error(`The expense object is empty`);
 
-            const result = await this.model.addExpense(apt_id, expense);
+            const result = await this.model.addExpense(property_id, expense);
 
             if(result instanceof Error)
                 throw new Error(`Error adding expense: ${result.message}`);
 
             res.status(201).json({
-                message: `Expense for apartment id:${apt_id}  added successfully`,
+                message: `Expense for property id:${property_id}  added successfully`,
                 result: result
             });
 

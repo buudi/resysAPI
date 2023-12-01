@@ -17,8 +17,8 @@ module.exports = (app, modelMode) => {
 
     app.use('/scratch', scratch(modelPath));
     app.use('/properties', properties(modelPath));
-    app.use('/apartments/expenses', expenses(modelPath));
-    app.use('/apartments/rooms',rooms(modelPath));
+    app.use('/properties/expenses', expenses(modelPath));
+    app.use('/properties/rooms',rooms(modelPath));
     app.use('/tenants', tenants(modelPath));
     app.use('/contracts', contracts(modelPath));
     app.use('/invoices', invoices(modelPath));
